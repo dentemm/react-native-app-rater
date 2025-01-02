@@ -1,4 +1,4 @@
-#import <AppRater/AppRaterSpec.h>
+#import <AppRaterSpec/AppRaterSpec.h>
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 

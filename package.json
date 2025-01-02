@@ -1,6 +1,6 @@
 {
   "name": "react-native-app-rater",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Request a native in-app review from your users ",
   "main": "js/NativeAppRater.ts",
   "scripts": {
