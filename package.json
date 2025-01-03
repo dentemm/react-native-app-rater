@@ -1,7 +1,7 @@
 {
   "name": "react-native-app-rater",
-  "version": "0.1.1",
-  "description": "Request a native in-app review from your users ",
+  "version": "1.0.0",
+  "description": "Request a native in-app review from your users - only targets new architecture",
   "main": "js/index.js",
   "react-native": "js/index.js",
   "source": "js/index.js",
@@ -14,7 +14,6 @@
     "apprater.podspec"
   ],
   "peerDependencies": {
-    "react": "*",
     "react-native": "*"
   },
   "codegenConfig": {
