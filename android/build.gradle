@@ -27,5 +27,6 @@ repositories {
 
 dependencies {
   implementation 'com.facebook.react:react-native:+'
-  implementation 'com.google.android.play:core:1.10.3'
+  implementation 'com.google.android.play:review:2.0.1'
+  implementation 'com.google.android.gms:play-services-tasks:18.0.2'
 }

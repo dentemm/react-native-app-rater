@@ -1,40 +1,28 @@
 package be.thinkmobile.apprater;
 
-import com.facebook.react.TurboReactPackage;
+import androidx.annotation.NonNull;
+import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.module.model.ReactModuleInfo;
-import com.facebook.react.module.model.ReactModuleInfoProvider;
+import com.facebook.react.uimanager.ViewManager;
+import be.thinkmobile.apprater.AppRaterModule;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class AppRaterPackage extends TurboReactPackage {
+public class AppRaterPackage implements ReactPackage {
+    @NonNull
     @Override
-    public NativeModule getModule(String name, ReactApplicationContext reactContext) {
-        if (name.equals(AppRaterModule.NAME)) {
-            return new AppRaterModule(reactContext);
-        }
-        return null;
+    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new AppRaterModule(reactContext));
+        return modules;
     }
 
+    @NonNull
     @Override
-    public ReactModuleInfoProvider getReactModuleInfoProvider() {
-        return () -> {
-            final Map<String, ReactModuleInfo> moduleInfo = new HashMap<>();
-            moduleInfo.put(
-                    AppRaterModule.NAME,
-                    new ReactModuleInfo(
-                            AppRaterModule.NAME,
-                            AppRaterModule.NAME,
-                            false, // canOverrideExistingModule
-                            false, // needsEagerInit
-                            true,  // hasConstants
-                            false, // isCxxModule
-                            true   // isTurboModule
-                    )
-            );
-            return moduleInfo;
-        };
+    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
+        return Collections.emptyList();
     }
-} 
+}
