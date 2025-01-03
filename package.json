@@ -1,6 +1,6 @@
 {
   "name": "react-native-app-rater",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Request a native in-app review from your users ",
   "main": "js/index.js",
   "react-native": "js/index.js",
@@ -20,6 +20,9 @@
   "codegenConfig": {
     "name": "AppRaterSpec",
     "type": "modules",
-    "jsSrcsDir": "js"
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "be.thinkmobile.apprater"
+    }
   }
 }

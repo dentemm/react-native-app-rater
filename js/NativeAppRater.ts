@@ -7,6 +7,8 @@ import { TurboModule, TurboModuleRegistry } from "react-native";
 export interface Spec extends TurboModule {
   /**
    * Requests an app review dialog to be shown
+   * On iOS: Uses SKStoreReviewController
+   * On Android: Uses Google Play In-App Review API
    * Note: The dialog may not appear if it has been shown too recently
    */
   requestReview(): void;
