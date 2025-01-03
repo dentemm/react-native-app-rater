@@ -11,10 +11,14 @@ RCT_EXPORT_MODULE()
 
 - (void)requestReview
 {
-    if (@available(iOS 16.0, *)) {
-        [SKStoreReviewController requestReviewInScene:UIApplication.sharedApplication.connectedScenes.allObjects.firstObject];
+    if (@available(iOS 18.0, *)) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [AppStore requestReviewInScene:UIApplication.sharedApplication.connectedScenes.allObjects.firstObject];
+        });
     } else if (@available(iOS 14.0, *)) {
-        [SKStoreReviewController requestReview];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SKStoreReviewController requestReviewInScene:UIApplication.sharedApplication.connectedScenes.allObjects.firstObject];
+        });
     }
 }
 
